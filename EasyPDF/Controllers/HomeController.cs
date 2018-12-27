@@ -152,7 +152,7 @@ namespace EasyPDF.Controllers
 			}
 
 			Thread.Sleep(50);
-
+			
 			int intOpenInputFile;
 			int intOpenOutputFile;
 			int intCopyForm;
