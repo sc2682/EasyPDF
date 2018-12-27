@@ -1,0 +1,25 @@
+﻿@model ConverterPDF
+
+@using EasyPDF.ViewModels
+
+@{
+	Guid gui = Guid.NewGuid();
+}
+
+<head runat="server">
+	<script>
+		window.onload = function () {
+			LoadPdf('@Model.PDFFileLocation.Replace("\\", "\\\\")', '@gui');
+		}
+	</script>
+</head>
+
+<div class="row" style="margin:10px;">
+	<div class="col-12">
+		<div id="ReaderPlus" class="readerplus" style="width: 100%; height: 650px;"></div>
+	</div>
+	
+</div>
+
+
+

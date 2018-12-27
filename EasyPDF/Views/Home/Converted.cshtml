@@ -1,0 +1,29 @@
+﻿@model List<ConverterPDF>
+
+@using EasyPDF.ViewModels
+
+
+@{
+	ViewData["Title"] = "Converted";
+}
+
+<head runat="server">
+	<!-- jQuery -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+	<!-- SVG -->
+	<script type="text/javascript" src="http://localhost:62625/ReaderPlus/GetResources?resourceName=P3Rest.ReaderPlusAgent.Resources.Scripts.Production.svg.min.js"></script>
+	<!-- Reader Plus -->
+	<script type="text/javascript" src="http://localhost:62625/ReaderPlus/GetResources?resourceName=P3Rest.ReaderPlusAgent.Resources.Scripts.Production.readerplus.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="http://localhost:62625/ReaderPlus/GetResources?resourceName=P3Rest.ReaderPlusAgent.Resources.Styles.readerplus.css" />
+</head>
+
+<h2>Converted</h2>
+
+@foreach (ConverterPDF file in Model)
+{
+	<div class="row">
+		@await Html.PartialAsync("_PDFView", file)
+	</div>
+}
