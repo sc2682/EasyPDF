@@ -37,6 +37,7 @@ function LoadPdf(url, gui) {
             "",
             function () {
                 readerplus.Document.save();
+                readerplus.Document.downloadPDF();
                 readerplus.Document.print();
             });
     });

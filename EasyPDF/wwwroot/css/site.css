@@ -35,3 +35,21 @@ body {
         display: none;
     }
 }
+
+.UploadForm {
+	text-align: center;
+}
+
+	.UploadForm p {
+		font-family: "Quicksand";
+		text-align: center;
+		font-size: 4rem;
+		font-weight:700;
+	}
+
+	.UploadForm input {
+		font-family: "Quicksand";
+		text-align: center;
+		font-size: 2.2rem;
+		padding: 10px 30px;
+	}
