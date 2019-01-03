@@ -170,11 +170,13 @@ namespace EasyPDF.Controllers
 				ErrorHandler("OpenInputFile", intOpenInputFile);
 			}
 
-			oTK.SetFont("Helvetica", 12, -1);
+			short font = oTK.SetFont("Helvetica", 12, -1);
 			string strTitle = "Signature:";
 			float textWidth = oTK.GetTextWidth(strTitle);
 			oTK.PrintText(10, 10, strTitle, -1);
 
+			APToolkitNET.FieldInfo field = oTK.AddField(1, 2, "Signature", 15 + textWidth, 3, 144, 24, "Helvetica", 18);
+			
 			// Copy the template (with the stamping changes) to the new file
 			// Start page and end page, 0 = all pages
 			intCopyForm = oTK.CopyForm(0, 0);
